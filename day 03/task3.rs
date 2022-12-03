@@ -8,7 +8,7 @@ use std::collections::BTreeMap;
 
 
 fn main() {
-    let args: Vec<String> =  env::args().collect();
+    let args: Vec<String> = env::args().collect();
     let file_name: &String = match args.len() {
         2 => &args[1],
         _ => panic!("Missing file name argument!"),
@@ -32,7 +32,6 @@ fn main() {
     let mut badge_sum = 0;
     let mut group_bag: [BTreeSet<char>; 2] = [BTreeSet::new(), BTreeSet::new()];
     for (line_no, line) in lines.enumerate() {
-
         let mut first_half: BTreeSet<char> = BTreeSet::new();
         for i in 0 .. line.len() / 2 {
             let c = line.as_bytes()[i] as char;
