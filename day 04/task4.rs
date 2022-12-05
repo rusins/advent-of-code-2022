@@ -46,6 +46,7 @@ fn main() {
         if a1.contains(&a2) || a2.contains(&a1) {
             containment_count += 1;
         }
+
         if a1.overlaps(&a2) {
             overlap_count += 1;
         }
