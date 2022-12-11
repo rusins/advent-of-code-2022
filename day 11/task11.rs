@@ -93,13 +93,12 @@ fn main() {
                 } else {
                     apply_operation(&monkeys[m].operation, item) % divisor_multiple
                 };
-                if worry_level % monkeys[m].divisible_test_value == 0 {
-                    let recipient = monkeys[m].test_true_monkey;
-                    monkeys[recipient].items.push(worry_level);
+                let recipient = if worry_level % monkeys[m].divisible_test_value == 0 {
+                    monkeys[m].test_true_monkey
                 } else {
-                    let recipient = monkeys[m].test_false_monkey;
-                    monkeys[recipient].items.push(worry_level);
-                }
+                    monkeys[m].test_false_monkey
+                };
+                monkeys[recipient].items.push(worry_level);
             }
             monkeys[m].items.clear();
         }
